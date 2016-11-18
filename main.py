@@ -28,7 +28,7 @@ def getInput():
             index = 1
         if index < 1 or index == 0:
             index = 3
-        update()    
+        update()
     if user_input.keychar.upper() == 'ENTER':
         global canContinue
         canContinue = True
@@ -44,7 +44,6 @@ def getInput():
                 setbLevel()
     elif user_input.keychar.upper() == 'ESCAPE':
         raise SystemExit ('Escape has been pressed')
-     
     elif user_input.keychar.upper() == 'F2':
         global loremIsEnabled
         loremIsEnabled = True
@@ -67,7 +66,7 @@ def getInput():
             
     for event in tdl.event.get():
         if event.type == 'QUIT':
-            raise SystemExit ('Window has been closed')            
+            raise SystemExit ('Window has been closed')
 def setrLevel():
     global rLevel
     global canContinue
@@ -93,7 +92,7 @@ def setgLevel():
             gLevel = 255
         update()        
     elif level_input.keychar.upper() == 'ESCAPE':
-        canContinue = False    
+        canContinue = False
 def setbLevel():
     global bLevel
     global canContinue
@@ -112,7 +111,6 @@ def loremDebug():
     global loremIsEnabled
     global loremX, loremY
     global offRight
-    global WIDTH
     canContinue = True
     update()
     lorem_input = tdl.event.key_wait()
@@ -156,7 +154,7 @@ def update():
             root.draw_str(0, 1, 'F1 : ', fg=(0,255,0))
             root.draw_str(5, 1,'Help')
             root.draw_str(11, 1,'Arrows : ', fg=(0,255,0))
-            root.draw_str(20, 1,'Select')    
+            root.draw_str(20, 1,'Select')
         if loremIsEnabled:
             root.draw_str(0, 32, 'DEBUG', fg = (255,0,0))
             root.draw_str(0, 33, 'X = {}  Y= {}  Right Offset = {}'.format(loremX, loremY, offRight), fg = (255,0,0))
@@ -171,9 +169,9 @@ def update():
         root.draw_str(0, 11, 'This software is made available according to the GNU General Public')
         root.draw_str(0, 12, 'V3, available at http://www.gnu.org/licenses/gpl.html.')
         root.draw_str(0, 35, 'Press ')
-        root.draw_str(6, 35, 'Escape', fg = (0,255,0)) 
-        root.draw_str(13, 35, 'to return to main screen.')     
-    tdl.flush()                        
+        root.draw_str(6, 35, 'Escape', fg = (0,255,0))
+        root.draw_str(13, 35, 'to return to main screen.')
+    tdl.flush()
 while True:
     update()
     getInput()

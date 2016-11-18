@@ -1,8 +1,8 @@
 from cx_Freeze import setup, Executable #, version
- 
- 
+
 build_exe_options = {"packages": ["cffi"], "excludes": ["jupyter", "scipy", "numpy","nose",]}
-bdist_msi_options = {'add_to_path' : True} 
+bdist_msi_options = {'add_to_path' : True}
+
 setup(
     name ='ColorTest',
     version ='1.0',
