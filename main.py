@@ -9,7 +9,7 @@ MAX_FPS = 30
 
 root = tdl.init(WIDTH, HEIGHT, 'Initializing...')
 set_fps(MAX_FPS)
-choices = ['R', 'G', 'B']
+#choices = ['R', 'G', 'B']
 index = 1
 bWhite = (255, 255, 255)
 rLevel, gLevel, bLevel = 255, 255, 255
@@ -20,8 +20,6 @@ loremIsEnabled = False
 helpScreen = False
 
 def getInput():
-    global MENU_KEYS
-    global choices
     global index
     user_input = tdl.event.key_wait()
     if user_input.keychar.upper() in MENU_KEYS:
@@ -73,7 +71,6 @@ def getInput():
 def setrLevel():
     global rLevel
     global canContinue
-    global MENU_KEYS
     level_input = tdl.event.key_wait()
     if level_input.keychar.upper() in MENU_KEYS:
         rLevel += MENU_KEYS[level_input.keychar.upper()]
@@ -87,7 +84,6 @@ def setrLevel():
 def setgLevel():
     global gLevel
     global canContinue
-    global MENU_KEYS
     level_input = tdl.event.key_wait()
     if level_input.keychar.upper() in MENU_KEYS:
         gLevel += MENU_KEYS[level_input.keychar.upper()]
@@ -97,12 +93,10 @@ def setgLevel():
             gLevel = 255
         update()        
     elif level_input.keychar.upper() == 'ESCAPE':
-        canContinue = False
-    
+        canContinue = False    
 def setbLevel():
     global bLevel
     global canContinue
-    global MENU_KEYS
     level_input = tdl.event.key_wait()
     if level_input.keychar.upper() in MENU_KEYS:
         bLevel += MENU_KEYS[level_input.keychar.upper()]
@@ -113,11 +107,9 @@ def setbLevel():
         update()        
     elif level_input.keychar.upper() == 'ESCAPE':
         canContinue = False
-
 def loremDebug():
     global canContinue
     global loremIsEnabled
-    global MENU_KEYS
     global loremX, loremY
     global offRight
     global WIDTH
@@ -134,12 +126,8 @@ def loremDebug():
     elif lorem_input.keychar.upper() == 'ESCAPE':
         canContinue = False
         loremIsEnabled = False
-        update()   
-    
-   
+        update()          
 def update():
-    global index
-    global rLevel, gLevel, bLevel
     root.clear()
     curFPS = get_fps()
     set_title('ColorTest | FPS : {} | By Gawein LE GOFF'.format(curFPS))
