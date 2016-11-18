@@ -18,4 +18,4 @@ At the moment, there is no build script for Linux or OSX.
 
 # Binaries
 
-Compiled Windows binaries (64 bits) available at http://www.mediafire.com/file/c5r6iyxa5g7zaxv/ColorTest.zip
+Compiled Windows binaries available at the Releases page (https://github.com/Edern76/ColorTest/releases)
