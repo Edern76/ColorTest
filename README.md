@@ -12,6 +12,11 @@ In order to run / compile the code, you'll need the following modules :
 
 In addition to these, if you want to compile this program using setup.py you'll need cx_Freeze : https://pypi.python.org/pypi/cx_Freeze
 
+# Compiling
+In order to compile for Windows, just run setup.py (or setupconda.py if you're using Anaconda, otherwise this will result in unecessary clutter in the binaries folder) with the argument "build" without quotation marks. Therefore, the full command looks like :   
+```python setup.py build```  
+At the moment, there is no build script for Linux or OSX.
+
 # Binaries
 
 Compiled Windows binaries (64 bits) available at http://www.mediafire.com/file/c5r6iyxa5g7zaxv/ColorTest.zip
